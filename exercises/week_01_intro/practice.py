@@ -1,59 +1,59 @@
 # ==============================================================================
-# ACU CSE 101: Week 01 Practice - The Way of the Program & Variables
+# ACU CSE 101: Week 01 Guided Workshop - The Way of the Program & Variables
 # Think Python: Chapters 1 & 2
 #
-# Instructions:
-# - Write your code below each exercise description.
-# - You do NOT need to write any functions (def) yet!
-# - Simply create variables and use print(...) to display your answers.
+# INSTRUCTOR & STUDENT IN-CLASS WORKSHOP:
+# Welcome to Python! Do not worry about solving this alone.
+# You will write the code for each part below together with your instructor / TA
+# during our live lecture & lab session.
+#
+# Follow along with your instructor as we explore:
+# 1. Using input() to read strings from the user
+# 2. Converting user input with int() and float()
+# 3. Cleaning user input with .strip()
+# 4. Floating-point comparison pitfalls (math.isclose)
+# 5. Exact decimal arithmetic for financial calculations (Decimal)
+# 6. Multiple assignment & variable swapping (a, b = b, a)
+# 7. Chained assignment (x = y = 50) and independent re-binding
+# 8. String operations (+ concatenation, * repetition, len, methods)
+# 9. String formatting for print() (f-string precision, alignment, sep & end)
 # ==============================================================================
 
-import math
+import math  # noqa: F401
+from decimal import Decimal  # noqa: F401
 
 # ------------------------------------------------------------------------------
-# Exercise 1: Temperature Conversion
-# Convert 37.0 degrees Celsius to Fahrenheit using the formula:
-#   Fahrenheit = Celsius * (9/5) + 32
+# Part 1: Reading Text with input()
+# input() pauses execution and waits for the user to type something.
+# It ALWAYS returns the entered value as a string (str).
 #
-# Task:
-# 1. Create a variable `celsius` with the value 37.0
-# 2. Calculate the temperature in Fahrenheit.
-# 3. Print the result containing both the label and value, for example:
-#    print("Fahrenheit:", fahrenheit)
+# In-Class Goal:
+# 1. Ask for the user's name: user_name = input("Enter your name: ")
+# 2. Greet the user: print(f"Hello, {user_name}! Welcome to CSE 101.")
 # ------------------------------------------------------------------------------
-celsius = 37.0
-fahrenheit = (celsius * 9 / 5) + 32
-print("Fahrenheit:", fahrenheit)
+# TODO: Write Part 1 together in class below:
 
 
 # ------------------------------------------------------------------------------
-# Exercise 2: Seconds in a Time Interval
-# Think Python Exercise 1.2, Question 1:
-# "How many seconds are there in 42 minutes 42 seconds?"
+# Part 2: Integer Input & Type Conversion - int()
+# If we need a whole number for arithmetic, convert the string using int().
 #
-# Task:
-# 1. Create variables for minutes (42) and seconds (42).
-# 2. Calculate the total number of seconds.
-# 3. Print the result, for example:
-#    print("Total seconds:", total_seconds)
+# In-Class Goal:
+# 1. Ask user for birth year: birth_year = int(input("Enter your birth year: "))
+# 2. Calculate age: age = 2026 - birth_year
+# 3. Print: print(f"You will turn {age} years old in 2026.")
 # ------------------------------------------------------------------------------
-minutes = 42
-seconds = 42
-total_seconds = (minutes * 60) + seconds
-print("Total seconds:", total_seconds)
+# TODO: Write Part 2 together in class below:
 
 
 # ------------------------------------------------------------------------------
-# Exercise 3: Volume of a Sphere
-# Think Python Exercise 2.2, Question 1:
-# "The volume of a sphere with radius r is (4/3) * pi * r^3.
-#  What is the volume of a sphere with radius 5?"
+# Part 3: Float Input & Type Conversion - float()
+# If the number has decimal places, convert the string using float().
 #
-# Task:
-# 1. Create a variable `radius` with the value 5.0
-# 2. Calculate the volume using math.pi (or 3.141592653589793).
-# 3. Print the result, for example:
-#    print("Sphere volume:", volume)
+# In-Class Goal:
+# 1. Ask user for Celsius: celsius = float(input("Enter temperature in Celsius: "))
+# 2. Convert to Fahrenheit: fahrenheit = (celsius * 9 / 5) + 32
+# 3. Print: print("Fahrenheit:", fahrenheit)
 # ------------------------------------------------------------------------------
 radius = 5.0
 volume = (4 / 3) * math.pi * (radius**3)

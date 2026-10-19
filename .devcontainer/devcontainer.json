@@ -12,40 +12,61 @@
         "editor.insertSpaces": true,
         "python.defaultInterpreterPath": "/usr/local/bin/python",
         "terminal.integrated.defaultProfile.linux": "bash",
+        "files.exclude": {
+          "**/.git": true,
+          "**/.svn": true,
+          "**/.hg": true,
+          "**/CVS": true,
+          "**/.DS_Store": true,
+          "**/Thumbs.db": true,
+          "**/__pycache__": true,
+          "scripts": true,
+          ".devcontainer": true,
+          ".pytest_cache": true,
+          "pytest.ini": true,
+          "requirements.txt": true,
+          "requirements-dev.txt": true
+        },
+        "git.enabled": false,
+        "git.decorations.enabled": false,
+        "scm.diffDecorations": "none",
+        "github.copilot.enable": {
+          "*": false
+        },
+        "github.copilot.editor.enableCodeActions": false,
+        "chat.commandCenter.enabled": false,
+        "inlineChat.enable": false,
+        "extensions.ignoreRecommendations": true,
+        "extensions.autoCheckUpdates": false,
+        "extensions.autoUpdate": false,
+        "workbench.startupEditor": "none",
+        "workbench.tips.enabled": false,
+        "workbench.welcomePage.walkthroughs.openOnInstall": false,
+        "telemetry.telemetryLevel": "off",
         "python.testing.pytestEnabled": true,
         "python.testing.pytestArgs": [
           "exercises"
         ],
         "python.testing.unittestEnabled": false,
         "python.testing.autoTestDiscoverOnSaveEnabled": true,
-        "tasks.statusBar": [
-          {
-            "label": "$(pass) Check My Code",
-            "task": "🧪 Run Tests for Current Week",
-            "tooltip": "Run automated unit tests to verify your code"
-          },
-          {
-            "label": "$(cloud-upload) Submit Practice",
-            "task": "🚀 Submit Current Week Practice",
-            "tooltip": "Submit your practice code to the TA review system"
-          },
-          {
-            "label": "$(sync) Sync Course",
-            "task": "🔄 Sync Course Materials with Upstream",
-            "tooltip": "Pull new weekly challenges from the course"
-          }
-        ]
+        "tasks.statusbar.displayMode": "menu",
+        "tasks.statusbar.alignment": "left",
+        "tasks.statusbar.menu.label": "Course Tasks",
+        "tasks.statusbar.menu.icon": "checklist",
+        "tasks.statusbar.menu.showActionsButton": false,
+        "tasks.statusbar.default.hide": false,
+        "tasks.statusbar.hiddenTasks": [],
+        "tasks.statusbar.menu.hiddenTasks": []
       },
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-python.debugpy",
-        "eamodio.gitlens",
-        "actboy168.tasks"
+        "dragoscv.tasks2"
       ]
     }
   },
 
   "postCreateCommand": "bash .devcontainer/post_create.sh",
-  "postStartCommand": "python3 scripts/auto_commit_daemon.py &"
+  "postStartCommand": "python3 scripts/auto_commit_daemon.py > /dev/null 2>&1 &"
 }
